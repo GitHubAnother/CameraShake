@@ -29,5 +29,7 @@ public class SpawnRandom : MonoBehaviour
     void Spawn()
     {
         Instantiate(YanHuoPrefab, this.transform.position + Random.insideUnitSphere * distance, Quaternion.identity);
+
+        Invoke("Spawn", Random.Range(minTime, maxTime));//循环调用
     }
 }
